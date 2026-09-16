@@ -1,4 +1,3 @@
-
 /* =========================
    GLOBAL
 ========================= */
@@ -13,6 +12,7 @@ html {
 
 body {
   margin: 0;
+
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -24,6 +24,7 @@ body {
 
   color: #222;
   background: #ffffff;
+
   line-height: 1.7;
 }
 
@@ -62,8 +63,13 @@ a:hover {
 
 .nav-name {
   color: #222;
+
   font-weight: 700;
   font-size: 20px;
+}
+
+.nav-name:hover {
+  text-decoration: none;
 }
 
 .nav-links {
@@ -89,6 +95,13 @@ a:hover {
   display: grid;
   grid-template-columns: 240px 1fr;
   gap: 60px;
+
+  align-items: center;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -97,17 +110,20 @@ a:hover {
   height: 220px;
 
   object-fit: cover;
+
   border-radius: 50%;
 }
 
 .hero h1 {
-  font-size: 46px;
   margin: 0 0 8px;
+
+  font-size: 46px;
   line-height: 1.2;
 }
 
 .hero h2 {
   margin: 0 0 6px;
+
   color: #555;
 
   font-weight: 500;
@@ -116,13 +132,16 @@ a:hover {
 
 .affiliation {
   margin-top: 5px;
+
   color: #777;
 }
 
 .intro {
-  margin-top: 22px;
-  font-size: 17px;
   max-width: 700px;
+
+  margin-top: 22px;
+
+  font-size: 17px;
 }
 
 .social-links {
@@ -130,6 +149,7 @@ a:hover {
 
   display: flex;
   flex-wrap: wrap;
+
   gap: 18px;
 }
 
@@ -139,7 +159,7 @@ a:hover {
 
 
 /* =========================
-   MAIN SECTIONS
+   MAIN
 ========================= */
 
 main {
@@ -150,6 +170,7 @@ main {
 
 section {
   padding: 65px 0;
+
   border-top: 1px solid #eeeeee;
 }
 
@@ -158,6 +179,17 @@ section {
   margin-bottom: 30px;
 
   font-size: 30px;
+  line-height: 1.3;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+#about p {
+  margin-top: 0;
+  margin-bottom: 18px;
 }
 
 
@@ -168,20 +200,26 @@ section {
 .research-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
   gap: 22px;
 }
 
 .research-card {
   padding: 25px;
 
+  background: #fafafa;
+
   border: 1px solid #e5e5e5;
   border-radius: 10px;
-
-  background: #fafafa;
 }
 
 .research-card h3 {
   margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.research-card p {
+  margin-bottom: 0;
 }
 
 
@@ -194,17 +232,30 @@ section {
   grid-template-columns: 260px 1fr;
 
   gap: 30px;
+
   margin-bottom: 55px;
+
+  align-items: start;
+}
+
+.publication:last-child {
+  margin-bottom: 0;
+}
+
+.pub-image {
+  width: 100%;
 }
 
 .pub-image img {
+  display: block;
+
   width: 100%;
   height: 160px;
 
   object-fit: cover;
 
-  border-radius: 6px;
   border: 1px solid #eeeeee;
+  border-radius: 6px;
 }
 
 .pub-info h3 {
@@ -220,8 +271,10 @@ section {
 
 .venue {
   margin: 5px 0;
-  font-style: italic;
+
   color: #666;
+
+  font-style: italic;
 }
 
 .pub-description {
@@ -230,6 +283,8 @@ section {
 
 .pub-links {
   display: flex;
+  flex-wrap: wrap;
+
   gap: 15px;
 }
 
@@ -237,20 +292,90 @@ section {
   font-weight: 600;
 }
 
+.author-note {
+  margin-top: 8px;
+  margin-bottom: 0;
+
+  color: #888;
+
+  font-size: 13px;
+  font-style: italic;
+}
+
+
+/* =========================
+   COLLABORATORS & SUPPORT
+========================= */
+
+.collaborator-logos {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 45px 55px;
+
+  margin-top: 30px;
+}
+
+.collaborator-logo {
+  width: 190px;
+  height: 85px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.collaborator-logo img {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 100%;
+  max-height: 70px;
+
+  object-fit: contain;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.collaborator-logo img:hover {
+  transform: scale(1.05);
+
+  opacity: 0.8;
+}
+
 
 /* =========================
    NEWS
 ========================= */
 
+.news-list {
+  width: 100%;
+}
+
 .news-item {
   display: grid;
   grid-template-columns: 120px 1fr;
 
+  gap: 15px;
+
   margin-bottom: 15px;
+}
+
+.news-item:last-child {
+  margin-bottom: 0;
 }
 
 .news-date {
   color: #777;
+
   font-weight: 600;
 }
 
@@ -261,9 +386,17 @@ section {
 
 .education-item {
   display: flex;
+
   justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 30px;
 
   margin-bottom: 28px;
+}
+
+.education-item:last-child {
+  margin-bottom: 0;
 }
 
 .education-item h3 {
@@ -272,7 +405,18 @@ section {
 
 .education-item p {
   margin: 3px 0;
+
   color: #666;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+#contact p {
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 
@@ -282,14 +426,60 @@ section {
 
 footer {
   max-width: 1050px;
-  margin: auto;
 
+  margin: auto;
   padding: 40px 24px;
 
   color: #888;
+
   font-size: 14px;
 
   border-top: 1px solid #eeeeee;
+}
+
+footer p {
+  margin: 0;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    grid-template-columns: 200px 1fr;
+
+    gap: 40px;
+  }
+
+  .hero-image img {
+    width: 190px;
+    height: 190px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .research-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .collaborator-logos {
+    gap: 35px;
+  }
+
+  .collaborator-logo {
+    width: 160px;
+    height: 75px;
+  }
+
+  .collaborator-logo img {
+    max-height: 62px;
+  }
+
 }
 
 
@@ -299,23 +489,34 @@ footer {
 
 @media (max-width: 750px) {
 
+  .navbar {
+    position: relative;
+  }
+
   .nav-container {
     flex-direction: column;
+
     gap: 10px;
+
+    padding: 14px 20px;
   }
 
   .nav-links {
-    gap: 12px;
-    flex-wrap: wrap;
     justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px 15px;
   }
 
   .hero {
     grid-template-columns: 1fr;
-    text-align: center;
 
     margin-top: 50px;
+
     gap: 25px;
+
+    text-align: center;
   }
 
   .hero-image img {
@@ -327,8 +528,25 @@ footer {
     font-size: 38px;
   }
 
+  .hero h2 {
+    font-size: 20px;
+  }
+
+  .intro {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .social-links {
     justify-content: center;
+  }
+
+  section {
+    padding: 50px 0;
+  }
+
+  .section-title {
+    font-size: 27px;
   }
 
   .research-grid {
@@ -337,86 +555,66 @@ footer {
 
   .publication {
     grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    margin-bottom: 50px;
+  }
+
+  .pub-image {
+    max-width: 500px;
   }
 
   .pub-image img {
     height: auto;
+
+    max-height: 280px;
+
+    object-fit: contain;
   }
 
   .news-item {
     grid-template-columns: 1fr;
+
+    gap: 2px;
+
+    margin-bottom: 20px;
   }
 
   .education-item {
     flex-direction: column;
+
+    gap: 5px;
   }
-   .author-note {
-  margin-top: 8px;
-  font-size: 13px;
-  color: #888;
-  font-style: italic;
-   }
+
+}
+
+
 /* =========================
-   COLLABORATORS & SUPPORT
+   SMALL MOBILE
 ========================= */
 
-.collaborator-logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
-  gap: 45px 55px;
-  margin-top: 30px;
-}
-
-.collaborator-logo {
-  width: 190px;
-  height: 85px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.collaborator-logo img {
-  max-width: 100%;
-  max-height: 70px;
-
-  width: auto;
-  height: auto;
-
-  object-fit: contain;
-
-  transition: transform 0.2s ease,
-              opacity 0.2s ease;
-}
-
-.collaborator-logo img:hover {
-  transform: scale(1.05);
-  opacity: 0.8;
-}
-
-
-/* Tablet */
-
-@media (max-width: 900px) {
-
-  .collaborator-logos {
-    gap: 35px;
-  }
-
-  .collaborator-logo {
-    width: 160px;
-    height: 75px;
-  }
-
-}
-
-
-/* Mobile */
-
 @media (max-width: 600px) {
+
+  .hero {
+    padding: 0 20px;
+  }
+
+  main {
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero h2 {
+    font-size: 18px;
+  }
+
+  .intro {
+    font-size: 16px;
+  }
 
   .collaborator-logos {
     gap: 30px 20px;
@@ -430,7 +628,5 @@ footer {
   .collaborator-logo img {
     max-height: 55px;
   }
-
-}
 
 }
