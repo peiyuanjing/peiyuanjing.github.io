@@ -356,33 +356,43 @@ footer {
   color: #888;
   font-style: italic;
    }
-   /* =========================
-   COLLABORATORS
+/* =========================
+   COLLABORATORS & SUPPORT
 ========================= */
 
 .collaborator-logos {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: 35px;
 
-  margin-top: 25px;
+  gap: 45px 55px;
+  margin-top: 30px;
 }
 
-.collaborator-logos img {
-  width: 100%;
-  max-width: 150px;
-  max-height: 65px;
+.collaborator-logo {
+  width: 190px;
+  height: 85px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collaborator-logo img {
+  max-width: 100%;
+  max-height: 70px;
+
+  width: auto;
+  height: auto;
 
   object-fit: contain;
-
-  justify-self: center;
 
   transition: transform 0.2s ease,
               opacity 0.2s ease;
 }
 
-.collaborator-logos img:hover {
+.collaborator-logo img:hover {
   transform: scale(1.05);
   opacity: 0.8;
 }
@@ -390,11 +400,15 @@ footer {
 
 /* Tablet */
 
-@media (max-width: 950px) {
+@media (max-width: 900px) {
 
   .collaborator-logos {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 35px;
+  }
+
+  .collaborator-logo {
+    width: 160px;
+    height: 75px;
   }
 
 }
@@ -405,12 +419,15 @@ footer {
 @media (max-width: 600px) {
 
   .collaborator-logos {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 35px;
+    gap: 30px 20px;
   }
 
-  .collaborator-logos img {
-    max-width: 130px;
+  .collaborator-logo {
+    width: 135px;
+    height: 65px;
+  }
+
+  .collaborator-logo img {
     max-height: 55px;
   }
 
