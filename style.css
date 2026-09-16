@@ -17,6 +17,9 @@ body {
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
     Roboto,
     Helvetica,
     Arial,
@@ -49,6 +52,9 @@ a:hover {
 
   background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid #eeeeee;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .nav-container {
@@ -60,9 +66,13 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  gap: 30px;
 }
 
 .nav-name {
+  flex-shrink: 0;
+
   color: #222;
 
   font-weight: 700;
@@ -73,8 +83,16 @@ a:hover {
   text-decoration: none;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+}
+
 .nav-links {
   display: flex;
+  align-items: center;
 
   gap: 25px;
 }
@@ -83,6 +101,50 @@ a:hover {
   color: #555;
 
   font-size: 15px;
+}
+
+.nav-links a:hover {
+  color: #1769aa;
+
+  text-decoration: none;
+}
+
+
+/* =========================
+   LANGUAGE SWITCH
+========================= */
+
+.language-switch {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  flex-shrink: 0;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+}
+
+.language-switch a {
+  color: #777;
+}
+
+.language-switch a:hover {
+  color: #1769aa;
+
+  text-decoration: none;
+}
+
+.language-current {
+  color: #222;
+
+  font-weight: 600;
+}
+
+.language-divider {
+  color: #cccccc;
 }
 
 
@@ -363,10 +425,11 @@ section {
   display: grid;
 
   /*
-     Eight equal virtual columns allow:
-     Row 1: four logos, each occupying 2 columns
-     Row 2: three logos centered underneath
+     8 virtual columns:
+     Row 1 = 4 academic institutions
+     Row 2 = 3 clinical/support organisations
   */
+
   grid-template-columns: repeat(8, 1fr);
 
   align-items: center;
@@ -377,7 +440,7 @@ section {
 }
 
 
-/* ---------- FIRST ROW: 4 ACADEMIC INSTITUTIONS ---------- */
+/* ---------- ROW 1 ---------- */
 
 .imperial-logo {
   grid-column: 1 / span 2;
@@ -396,12 +459,7 @@ section {
 }
 
 
-/* ---------- SECOND ROW: 3 PARTNERS / SUPPORT ---------- */
-
-/*
-   Starting at columns 2, 4 and 6 centers the
-   three logos underneath the four-logo row.
-*/
+/* ---------- ROW 2 ---------- */
 
 .luzern-logo {
   grid-column: 2 / span 2;
@@ -456,13 +514,7 @@ section {
 }
 
 
-/*
-   Small visual normalization.
-
-   Different source files contain different amounts
-   of internal whitespace, so their raw dimensions
-   do not correspond to their perceived size.
-*/
+/* Visual normalization for different logo aspect ratios */
 
 .imperial-logo img {
   max-width: 155px;
@@ -528,6 +580,19 @@ footer p {
 
 @media (max-width: 900px) {
 
+  .nav-container {
+    gap: 20px;
+  }
+
+  .nav-right {
+    gap: 18px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+
   .hero {
     grid-template-columns: 200px 1fr;
 
@@ -543,15 +608,11 @@ footer p {
     font-size: 40px;
   }
 
+
   .research-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-
-  /*
-     Keep collaborators as 4 + 3 while there
-     is still enough horizontal space.
-  */
 
   .collaborator-grid {
     row-gap: 35px;
@@ -609,6 +670,7 @@ footer p {
     position: relative;
   }
 
+
   .nav-container {
     flex-direction: column;
 
@@ -617,12 +679,27 @@ footer p {
     padding: 14px 20px;
   }
 
+
+  .nav-right {
+    flex-direction: column;
+
+    gap: 8px;
+
+    width: 100%;
+  }
+
+
   .nav-links {
     justify-content: center;
 
     flex-wrap: wrap;
 
     gap: 8px 15px;
+  }
+
+
+  .language-switch {
+    justify-content: center;
   }
 
 
@@ -715,11 +792,6 @@ footer p {
 
   /* ---------- COLLABORATORS ---------- */
 
-  /*
-     On phones switch to a simple 2-column layout.
-     Reset all explicit desktop grid positions.
-  */
-
   .collaborator-grid {
     grid-template-columns: repeat(2, 1fr);
 
@@ -752,12 +824,6 @@ footer p {
     max-width: 135px;
     max-height: 55px;
   }
-
-
-  /*
-     There are seven logos, so center the final
-     SNSF logo rather than leaving it on the left.
-  */
 
   .snsf-logo {
     grid-column: 1 / -1;
