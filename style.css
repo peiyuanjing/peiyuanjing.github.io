@@ -53,6 +53,7 @@ a:hover {
 
 .nav-container {
   max-width: 1050px;
+
   margin: auto;
   padding: 18px 24px;
 
@@ -74,11 +75,13 @@ a:hover {
 
 .nav-links {
   display: flex;
+
   gap: 25px;
 }
 
 .nav-links a {
   color: #555;
+
   font-size: 15px;
 }
 
@@ -89,11 +92,13 @@ a:hover {
 
 .hero {
   max-width: 1050px;
+
   margin: 90px auto 60px;
   padding: 0 24px;
 
   display: grid;
   grid-template-columns: 240px 1fr;
+
   gap: 60px;
 
   align-items: center;
@@ -101,6 +106,7 @@ a:hover {
 
 .hero-image {
   display: flex;
+
   justify-content: center;
   align-items: center;
 }
@@ -164,6 +170,7 @@ a:hover {
 
 main {
   max-width: 1050px;
+
   margin: auto;
   padding: 0 24px;
 }
@@ -199,6 +206,7 @@ section {
 
 .research-grid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
 
   gap: 22px;
@@ -229,6 +237,7 @@ section {
 
 .publication {
   display: grid;
+
   grid-template-columns: 260px 1fr;
 
   gap: 30px;
@@ -304,135 +313,6 @@ section {
 
 
 /* =========================
-   COLLABORATORS & SUPPORT
-========================= */
-
-.collaborator-groups {
-  margin-top: 35px;
-}
-
-
-/* Shared row styling */
-
-.collaborator-row {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-}
-
-
-/* Row 1: 4 academic institutions */
-
-.academic-row {
-  grid-template-columns: repeat(4, 1fr);
-  gap: 35px;
-}
-
-
-/* Row 2: 3 clinical/support institutions */
-
-.clinical-row {
-  grid-template-columns: repeat(3, 1fr);
-
-  max-width: 760px;
-  margin: 45px auto 0;
-
-  gap: 50px;
-}
-
-
-/* Logo containers */
-
-.collaborator-logo {
-  width: 100%;
-  height: 80px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-/* Logo images */
-
-.collaborator-logo img {
-  display: block;
-
-  width: auto;
-  height: auto;
-
-  max-width: 175px;
-  max-height: 65px;
-
-  object-fit: contain;
-
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
-}
-
-
-.collaborator-logo img:hover {
-  transform: scale(1.04);
-  opacity: 0.8;
-}
-
-
-/* =========================
-   COLLABORATORS — TABLET
-========================= */
-
-@media (max-width: 800px) {
-
-  .academic-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 35px 25px;
-  }
-
-  .clinical-row {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-
-    margin-top: 40px;
-  }
-
-  .collaborator-logo img {
-    max-width: 145px;
-    max-height: 58px;
-  }
-
-}
-
-
-/* =========================
-   COLLABORATORS — MOBILE
-========================= */
-
-@media (max-width: 550px) {
-
-  .academic-row,
-  .clinical-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px 20px;
-  }
-
-  .clinical-row {
-    margin-top: 35px;
-  }
-
-  .collaborator-logo {
-    height: 65px;
-  }
-
-  .collaborator-logo img {
-    max-width: 125px;
-    max-height: 52px;
-  }
-
-}
-
-
-/* =========================
    NEWS
 ========================= */
 
@@ -442,6 +322,7 @@ section {
 
 .news-item {
   display: grid;
+
   grid-template-columns: 120px 1fr;
 
   gap: 15px;
@@ -461,42 +342,161 @@ section {
 
 
 /* =========================
-   EDUCATION
-========================= */
-
-.education-item {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: flex-start;
-
-  gap: 30px;
-
-  margin-bottom: 28px;
-}
-
-.education-item:last-child {
-  margin-bottom: 0;
-}
-
-.education-item h3 {
-  margin: 0;
-}
-
-.education-item p {
-  margin: 3px 0;
-
-  color: #666;
-}
-
-
-/* =========================
    CONTACT
 ========================= */
 
 #contact p {
   margin-top: 0;
   margin-bottom: 15px;
+}
+
+
+/* =========================
+   COLLABORATORS & SUPPORT
+========================= */
+
+#collaborators {
+  padding-bottom: 75px;
+}
+
+.collaborator-grid {
+  display: grid;
+
+  /*
+     Eight equal virtual columns allow:
+     Row 1: four logos, each occupying 2 columns
+     Row 2: three logos centered underneath
+  */
+  grid-template-columns: repeat(8, 1fr);
+
+  align-items: center;
+
+  row-gap: 45px;
+
+  margin-top: 35px;
+}
+
+
+/* ---------- FIRST ROW: 4 ACADEMIC INSTITUTIONS ---------- */
+
+.imperial-logo {
+  grid-column: 1 / span 2;
+}
+
+.zhaw-logo {
+  grid-column: 3 / span 2;
+}
+
+.tsinghua-logo {
+  grid-column: 5 / span 2;
+}
+
+.cambridge-logo {
+  grid-column: 7 / span 2;
+}
+
+
+/* ---------- SECOND ROW: 3 PARTNERS / SUPPORT ---------- */
+
+/*
+   Starting at columns 2, 4 and 6 centers the
+   three logos underneath the four-logo row.
+*/
+
+.luzern-logo {
+  grid-column: 2 / span 2;
+}
+
+.swissmedical-logo {
+  grid-column: 4 / span 2;
+}
+
+.snsf-logo {
+  grid-column: 6 / span 2;
+}
+
+
+/* ---------- LOGO CONTAINERS ---------- */
+
+.collaborator-logo {
+  min-width: 0;
+  height: 90px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 8px 12px;
+}
+
+
+/* ---------- LOGO IMAGES ---------- */
+
+.collaborator-logo img {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 180px;
+  max-height: 68px;
+
+  object-fit: contain;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.collaborator-logo img:hover {
+  transform: scale(1.04);
+
+  opacity: 0.82;
+}
+
+
+/*
+   Small visual normalization.
+
+   Different source files contain different amounts
+   of internal whitespace, so their raw dimensions
+   do not correspond to their perceived size.
+*/
+
+.imperial-logo img {
+  max-width: 155px;
+  max-height: 70px;
+}
+
+.zhaw-logo img {
+  max-width: 170px;
+  max-height: 65px;
+}
+
+.tsinghua-logo img {
+  max-width: 155px;
+  max-height: 62px;
+}
+
+.cambridge-logo img {
+  max-width: 165px;
+  max-height: 62px;
+}
+
+.luzern-logo img {
+  max-width: 190px;
+  max-height: 65px;
+}
+
+.swissmedical-logo img {
+  max-width: 175px;
+  max-height: 68px;
+}
+
+.snsf-logo img {
+  max-width: 180px;
+  max-height: 68px;
 }
 
 
@@ -547,17 +547,53 @@ footer p {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .collaborator-logos {
-    gap: 35px;
+
+  /*
+     Keep collaborators as 4 + 3 while there
+     is still enough horizontal space.
+  */
+
+  .collaborator-grid {
+    row-gap: 35px;
   }
 
   .collaborator-logo {
-    width: 160px;
-    height: 75px;
+    height: 80px;
+
+    padding: 8px;
   }
 
   .collaborator-logo img {
-    max-height: 62px;
+    max-width: 140px;
+    max-height: 58px;
+  }
+
+  .imperial-logo img {
+    max-width: 125px;
+  }
+
+  .zhaw-logo img {
+    max-width: 135px;
+  }
+
+  .tsinghua-logo img {
+    max-width: 125px;
+  }
+
+  .cambridge-logo img {
+    max-width: 130px;
+  }
+
+  .luzern-logo img {
+    max-width: 150px;
+  }
+
+  .swissmedical-logo img {
+    max-width: 140px;
+  }
+
+  .snsf-logo img {
+    max-width: 145px;
   }
 
 }
@@ -588,6 +624,9 @@ footer p {
 
     gap: 8px 15px;
   }
+
+
+  /* ---------- HERO ---------- */
 
   .hero {
     grid-template-columns: 1fr;
@@ -621,6 +660,9 @@ footer p {
     justify-content: center;
   }
 
+
+  /* ---------- SECTIONS ---------- */
+
   section {
     padding: 50px 0;
   }
@@ -629,9 +671,15 @@ footer p {
     font-size: 27px;
   }
 
+
+  /* ---------- RESEARCH ---------- */
+
   .research-grid {
     grid-template-columns: 1fr;
   }
+
+
+  /* ---------- PUBLICATIONS ---------- */
 
   .publication {
     grid-template-columns: 1fr;
@@ -653,6 +701,9 @@ footer p {
     object-fit: contain;
   }
 
+
+  /* ---------- NEWS ---------- */
+
   .news-item {
     grid-template-columns: 1fr;
 
@@ -661,10 +712,55 @@ footer p {
     margin-bottom: 20px;
   }
 
-  .education-item {
-    flex-direction: column;
 
-    gap: 5px;
+  /* ---------- COLLABORATORS ---------- */
+
+  /*
+     On phones switch to a simple 2-column layout.
+     Reset all explicit desktop grid positions.
+  */
+
+  .collaborator-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    column-gap: 20px;
+    row-gap: 30px;
+  }
+
+  .imperial-logo,
+  .zhaw-logo,
+  .tsinghua-logo,
+  .cambridge-logo,
+  .luzern-logo,
+  .swissmedical-logo,
+  .snsf-logo {
+    grid-column: auto;
+  }
+
+  .collaborator-logo {
+    height: 70px;
+  }
+
+  .collaborator-logo img,
+  .imperial-logo img,
+  .zhaw-logo img,
+  .tsinghua-logo img,
+  .cambridge-logo img,
+  .luzern-logo img,
+  .swissmedical-logo img,
+  .snsf-logo img {
+    max-width: 135px;
+    max-height: 55px;
+  }
+
+
+  /*
+     There are seven logos, so center the final
+     SNSF logo rather than leaving it on the left.
+  */
+
+  .snsf-logo {
+    grid-column: 1 / -1;
   }
 
 }
@@ -696,17 +792,21 @@ footer p {
     font-size: 16px;
   }
 
-  .collaborator-logos {
-    gap: 30px 20px;
+  .collaborator-grid {
+    column-gap: 15px;
+    row-gap: 25px;
   }
 
-  .collaborator-logo {
-    width: 135px;
-    height: 65px;
-  }
-
-  .collaborator-logo img {
-    max-height: 55px;
+  .collaborator-logo img,
+  .imperial-logo img,
+  .zhaw-logo img,
+  .tsinghua-logo img,
+  .cambridge-logo img,
+  .luzern-logo img,
+  .swissmedical-logo img,
+  .snsf-logo img {
+    max-width: 120px;
+    max-height: 50px;
   }
 
 }
