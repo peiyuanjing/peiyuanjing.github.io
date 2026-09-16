@@ -356,5 +356,64 @@ footer {
   color: #888;
   font-style: italic;
    }
+   /* =========================
+   COLLABORATORS
+========================= */
+
+.collaborator-logos {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  gap: 35px;
+
+  margin-top: 25px;
+}
+
+.collaborator-logos img {
+  width: 100%;
+  max-width: 150px;
+  max-height: 65px;
+
+  object-fit: contain;
+
+  justify-self: center;
+
+  transition: transform 0.2s ease,
+              opacity 0.2s ease;
+}
+
+.collaborator-logos img:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+
+/* Tablet */
+
+@media (max-width: 950px) {
+
+  .collaborator-logos {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .collaborator-logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+
+  .collaborator-logos img {
+    max-width: 130px;
+    max-height: 55px;
+  }
+
+}
 
 }
