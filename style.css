@@ -307,27 +307,53 @@ section {
    COLLABORATORS & SUPPORT
 ========================= */
 
-.collaborator-logos {
-  display: flex;
-  flex-wrap: wrap;
-
-  justify-content: center;
-  align-items: center;
-
-  gap: 45px 55px;
-
-  margin-top: 30px;
+.collaborator-groups {
+  margin-top: 35px;
 }
+
+
+/* Shared row styling */
+
+.collaborator-row {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+
+/* Row 1: 4 academic institutions */
+
+.academic-row {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+}
+
+
+/* Row 2: 3 clinical/support institutions */
+
+.clinical-row {
+  grid-template-columns: repeat(3, 1fr);
+
+  max-width: 760px;
+  margin: 45px auto 0;
+
+  gap: 50px;
+}
+
+
+/* Logo containers */
 
 .collaborator-logo {
-  width: 190px;
-  height: 85px;
+  width: 100%;
+  height: 80px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 }
+
+
+/* Logo images */
 
 .collaborator-logo img {
   display: block;
@@ -335,8 +361,8 @@ section {
   width: auto;
   height: auto;
 
-  max-width: 100%;
-  max-height: 70px;
+  max-width: 175px;
+  max-height: 65px;
 
   object-fit: contain;
 
@@ -345,10 +371,64 @@ section {
     opacity 0.2s ease;
 }
 
-.collaborator-logo img:hover {
-  transform: scale(1.05);
 
+.collaborator-logo img:hover {
+  transform: scale(1.04);
   opacity: 0.8;
+}
+
+
+/* =========================
+   COLLABORATORS — TABLET
+========================= */
+
+@media (max-width: 800px) {
+
+  .academic-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px 25px;
+  }
+
+  .clinical-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+
+    margin-top: 40px;
+  }
+
+  .collaborator-logo img {
+    max-width: 145px;
+    max-height: 58px;
+  }
+
+}
+
+
+/* =========================
+   COLLABORATORS — MOBILE
+========================= */
+
+@media (max-width: 550px) {
+
+  .academic-row,
+  .clinical-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
+  }
+
+  .clinical-row {
+    margin-top: 35px;
+  }
+
+  .collaborator-logo {
+    height: 65px;
+  }
+
+  .collaborator-logo img {
+    max-width: 125px;
+    max-height: 52px;
+  }
+
 }
 
 
